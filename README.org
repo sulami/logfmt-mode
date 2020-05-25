@@ -1,0 +1,14 @@
+#+title: logfmt-mode
+
+Emacs syntax highlighting for [[https://www.brandur.org/logfmt][logfmt]] logs.
+
+* Use
+
+Simply activate ~logfmt-mode~. You can [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html#Directory-Variables][directory-local]] variables to
+automatically activate it as well:
+
+#+name: .dir-locals.el
+#+begin_src emacs-lisp
+;; Use logfmt-mode for all files in the logs/ directory.
+(("logs" . ((mode . logfmt))))
+#+end_src
