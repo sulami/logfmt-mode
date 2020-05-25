@@ -34,7 +34,11 @@
 (setq logfmt-font-lock-defaults
       (let ((x-equals-regexp (regexp-quote "="))
             (x-string-regexp (rx "\"" (0+ anything) "\"" word-end))
-            (x-labels-regexp (rx word-start (group (1+ (char alpha))) "=")))
+            (x-labels-regexp (rx word-start
+                                 (group (1+ (not (any ?=
+                                                      space))))
+                                 (opt (sequence "="
+                                                (+? (not (any space))))))))
         `((,x-labels-regexp . (1 font-lock-variable-name-face))
           (,x-equals-regexp . font-lock-builtin-face)
           (,x-string-regexp . font-lock-string-face))))
