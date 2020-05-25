@@ -6,6 +6,7 @@
 ;; Maintainer: Robin Schroer <sulami@peerwire.org>
 ;; Version: 1.0
 ;; Homepage: https://github.com/sulami/logfmt-mode
+;; Package-Requires: ((emacs "25.1") (faceup "0.0.5"))
 ;; Keywords: languages
 
 ;; This file is not part of GNU Emacs.
@@ -28,6 +29,8 @@
 ;; This major mode provides syntax highlighting for logfmt logs.
 
 ;;; Code:
+
+(require 'rx)
 
 (defvar logfmt-font-lock-defaults nil "Font locks for logfmt-mode.")
 
